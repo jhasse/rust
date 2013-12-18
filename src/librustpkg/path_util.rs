@@ -16,7 +16,7 @@ pub use package_id::PkgId;
 pub use target::{OutputType, Main, Lib, Test, Bench, Target, Build, Install};
 pub use version::{Version, NoVersion, split_version_general, try_parsing_version};
 pub use rustc::metadata::filesearch::rust_path;
-use rustc::metadata::filesearch::libdir;
+use rustc::metadata::filesearch::{libdir, rustlibdir};
 use rustc::driver::driver::host_triple;
 
 use std::libc;

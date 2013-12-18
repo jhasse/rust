@@ -398,6 +398,7 @@ valopt datadir "${CFG_PREFIX}/share" "install data"
 valopt infodir "${CFG_PREFIX}/share/info" "install additional info"
 valopt mandir "${CFG_PREFIX}/share/man" "install man pages in PATH"
 valopt libdir "${CFG_PREFIX}/lib" "install libraries"
+valopt rustlibdir "rustlib" "subdirectory name for rustc's libraries"
 
 # Validate Options
 step_msg "validating $CFG_SELF args"
@@ -775,10 +776,10 @@ do
             make_dir $h/stage$i/test
 
             # target bin dir
-            make_dir $h/stage$i/$CFG_LIBDIR/rustc/$t/bin
+            make_dir $h/stage$i/$CFG_LIBDIR/$CFG_RUSTLIBDIR/$t/bin
 
             # target lib dir
-            make_dir $h/stage$i/$CFG_LIBDIR/rustc/$t/$CFG_LIBDIR
+            make_dir $h/stage$i/$CFG_LIBDIR/$CFG_RUSTLIBDIR/$t/$CFG_LIBDIR
         done
     done
 
